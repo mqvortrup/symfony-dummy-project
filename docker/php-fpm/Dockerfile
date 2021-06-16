@@ -21,9 +21,8 @@ WORKDIR /app
 
 ## Install composer
 RUN wget https://getcomposer.org/installer && \
-    php installer --install-dir=/usr/local/bin/ --filename=composer && \
-    rm installer && \
-    composer global require hirak/prestissimo
+    php installer --install-dir=/usr/local/bin/ --version=1.0.3 --filename=composer && \
+    rm installer
 
 # Test image
 FROM dev AS test
