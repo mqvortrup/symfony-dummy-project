@@ -6,9 +6,9 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - port: {{ .service.port }}
   selector:
-    app: public-app
+    app: {{ .service.name | quote }}
     
 apiVersion: extensions/v1beta1
 kind: Ingress
