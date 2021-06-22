@@ -7,7 +7,8 @@ services:
         VERSION: $NGINX_VERSION
       context: .
       dockerfile: ./docker/nginx/Dockerfile
-      target: dev
+      target: $APP_ENV
+    image: $REGISTRY/cbh_nginx
     volumes:
       - ./assets:/app/public
     depends_on:
@@ -20,7 +21,8 @@ services:
         VERSION: $PHP_VERSION
       context: .
       dockerfile: ./docker/php-fpm/Dockerfile
-      target: dev
+      target: $APP_ENV
+    image: $REGISTRY/cbh_php-fpm
     volumes:
       - .:/app
     command: sh -c 'composer install --no-interaction --optimize-autoloader && php-fpm'
@@ -31,6 +33,7 @@ services:
       args:
         VERSION: $MYSQL_VERSION
       context: ./docker/mysql
+    image: $REGISTRY/cbh_mysql
     environment:
       MYSQL_DATABASE: $MYSQL_DATABASE
       MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD

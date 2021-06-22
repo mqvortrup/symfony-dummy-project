@@ -8,7 +8,7 @@ resources:
 
 mysql:
   name: "mysql"
-  image: "cbhtestregistry.azurecr.io/symfony-dummy-project-mysql"
+  image: "cbhtestregistry.azurecr.io/cbh_mysql"
   port: 3306
   env:
     secret:
@@ -21,12 +21,12 @@ mysql:
 
 nginx:
   name: "nginx"
-  image: "cbhtestregistry.azurecr.io/symfony-dummy-project-nginx"
+  image: "cbhtestregistry.azurecr.io/cbh_nginx"
   port: 80
 
 phpfpm:
   name: "php-fpm"
-  image: "cbhtestregistry.azurecr.io/symfony-dummy-project-php-fpm"
+  image: "cbhtestregistry.azurecr.io/cbh_fpm"
   port: 9000
   env:
     secret:
