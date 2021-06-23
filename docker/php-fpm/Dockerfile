@@ -54,3 +54,4 @@ RUN rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 RUN apk del dev-deps && \
     rm /usr/local/bin/composer
 
+CMD [ "php-fpm" ]
