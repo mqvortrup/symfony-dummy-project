@@ -26,7 +26,7 @@ nginx:
 
 phpfpm:
   name: "php-fpm"
-  image: "cbhtestregistry.azurecr.io/cbh_fpm"
+  image: "cbhtestregistry.azurecr.io/cbh_php-fpm"
   port: 9000
   env:
     secret:
